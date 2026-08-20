@@ -27,6 +27,12 @@ npm run lint        # Prettier and ESLint
 npm run build       # Production build
 ```
 
+## Deploy to GitHub Pages
+
+The workflow in `.github/workflows/deploy.yml` builds and deploys Mazzie as a static site whenever `main` changes. It runs the Svelte checks and Vitest suite first, configures the repository subpath automatically, then publishes the `build` directory with GitHub Pages.
+
+In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The first successful workflow run will publish the site at the repository’s GitHub Pages URL.
+
 ## How the daily puzzle works
 
 The default daily puzzle is an 8-character equation in the `classic` difficulty: whole numbers only, no negative numbers, and `+`, `-`, `*`, and `/` operators.
