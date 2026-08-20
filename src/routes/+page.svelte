@@ -193,23 +193,10 @@
 		<section class="play-column" aria-labelledby="game-title">
 			<div class="intro-row">
 				<div>
-					<div class="eyebrow-row">
-						<Badge variant="secondary"
-							>{game.state.mode === 'daily' ? 'Puzzle 234' : 'Practice'}</Badge
-						>
-						<span class="date-label">{game.state.puzzleDate}</span>
-					</div>
 					<h1 id="game-title">Make it balance.</h1>
 					<p class="intro-copy">
 						Find the hidden {game.state.length}-character equation. Every guess must balance.
 					</p>
-				</div>
-				<div
-					class="attempt-count"
-					aria-label={`${game.maxGuesses - game.state.guesses.length} guesses remaining`}
-				>
-					<strong>{Math.max(0, game.maxGuesses - game.state.guesses.length)}</strong>
-					<span>tries<br />left</span>
 				</div>
 			</div>
 
@@ -524,8 +511,6 @@
 	}
 
 	.brand-kicker,
-	.eyebrow-row,
-	.date-label,
 	.board-caption,
 	.stats-footnote,
 	:global(.primer-label),
@@ -576,14 +561,6 @@
 		gap: 1rem;
 	}
 
-	.eyebrow-row {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		margin-bottom: 0.9rem;
-		color: var(--muted-foreground);
-	}
-
 	.intro-row h1 {
 		margin: 0;
 		font-family: var(--font-display);
@@ -599,28 +576,6 @@
 		color: var(--muted-foreground);
 		font-size: 0.98rem;
 		line-height: 1.55;
-	}
-
-	.attempt-count {
-		display: flex;
-		align-items: center;
-		gap: 0.45rem;
-		padding-top: 0.25rem;
-		color: var(--muted-foreground);
-		font-size: 0.66rem;
-		font-weight: 700;
-		letter-spacing: 0.09em;
-		line-height: 1.2;
-		text-transform: uppercase;
-		text-align: left;
-	}
-
-	.attempt-count strong {
-		color: var(--primary);
-		font-family: var(--font-mono);
-		font-size: 2.2rem;
-		letter-spacing: -0.1em;
-		line-height: 1;
 	}
 
 	:global(.mode-switcher) {
@@ -894,6 +849,10 @@
 		text-underline-offset: 0.25em;
 	}
 
+	:global(.dark) .footer-link {
+		color: var(--foreground);
+	}
+
 	:global(.dialog-panel) {
 		max-height: calc(100vh - 2rem);
 		overflow-y: auto;
@@ -993,7 +952,7 @@
 		}
 
 		.page-grid {
-			padding-block: 4rem 3rem;
+			padding-block: 2rem 3rem;
 		}
 
 		.board,
@@ -1050,14 +1009,6 @@
 
 		.intro-row h1 {
 			font-size: 2.55rem;
-		}
-
-		.attempt-count {
-			gap: 0.2rem;
-		}
-
-		.attempt-count strong {
-			font-size: 1.8rem;
 		}
 
 		.board,

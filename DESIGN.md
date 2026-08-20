@@ -163,7 +163,7 @@ The palette uses a warm coral action colour against cool blue-neutral surfaces. 
 
 The app uses a centred, fluid page width: `min(100% - 2rem, 1120px)` by default, widening to `min(100% - 4rem, 1120px)` from `700px` and tightening to `min(100% - 1.25rem, 1120px)` below `480px`.
 
-The main area is a single-column game flow on small screens. From `960px`, it becomes a two-column composition: a flexible play column and an `18rem` side rail, separated by `4.5rem`. The side rail begins lower than the title to keep the board as the first visual anchor. The board and keyboard cap at `39rem` on larger screens and fill the available width on mobile.
+The main area is a single-column game flow on small screens. From `960px`, it becomes a two-column composition: a flexible play column and an `18rem` side rail, separated by `4.5rem`. Desktop content begins `2rem` below the header divider so the play surface arrives promptly; the side rail still begins lower than the title to keep the board as the first visual anchor. The board and keyboard cap at `39rem` on larger screens and fill the available width on mobile.
 
 Spacing follows a compact rhythm built from `0.25rem`, `0.5rem`, `0.75rem`, `1rem`, `1.5rem`, `2.25rem`, and `4.5rem`. The board uses equal grid columns with `0.5rem` gaps, reducing to `0.3rem` on very narrow screens.
 
