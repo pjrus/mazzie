@@ -1,0 +1,141 @@
+{
+	"schemaVersion": 2,
+	"generatedAt": "2026-08-20T01:20:00.000Z",
+	"title": "Design System: Mazzie",
+	"extensions": {
+		"colorMeta": {
+			"primary": {
+				"role": "primary",
+				"displayName": "Coral action",
+				"canonical": "oklch(0.55 0.17 28)",
+				"tonalRamp": ["oklch(0.96 0.03 28)", "oklch(0.55 0.17 28)", "oklch(0.42 0.15 28)"]
+			},
+			"primary-dark": {
+				"role": "primary",
+				"displayName": "Readable night coral",
+				"canonical": "oklch(0.69 0.16 35)",
+				"tonalRamp": ["oklch(0.85 0.08 35)", "oklch(0.69 0.16 35)", "oklch(0.52 0.14 35)"]
+			},
+			"cool-white": {
+				"role": "neutral",
+				"displayName": "Cool white",
+				"canonical": "oklch(0.985 0.006 255)",
+				"tonalRamp": ["oklch(1 0 0)", "oklch(0.985 0.006 255)", "oklch(0.96 0.008 255)"]
+			},
+			"cool-night": {
+				"role": "neutral",
+				"displayName": "Cool night",
+				"canonical": "oklch(0.205 0.014 255)",
+				"tonalRamp": ["oklch(0.34 0.022 255)", "oklch(0.205 0.014 255)", "oklch(0.14 0.012 255)"]
+			}
+		},
+		"typographyMeta": {
+			"display": {
+				"displayName": "Rounded display",
+				"purpose": "The game title and compact brand name."
+			},
+			"mono": {
+				"displayName": "Equation mono",
+				"purpose": "All equation characters, tile values, stats, and share output."
+			}
+		},
+		"shadows": [
+			{
+				"name": "brand-mark",
+				"value": "0 4px 12px color-mix(in oklab, var(--foreground) 18%, transparent)",
+				"purpose": "Small lift for the coral brand mark."
+			},
+			{
+				"name": "light-card",
+				"value": "0 8px 22px color-mix(in oklab, var(--foreground) 10%, transparent)",
+				"purpose": "Quiet lift for supporting cards in light mode only."
+			},
+			{
+				"name": "dark-card",
+				"value": "none",
+				"purpose": "Dark cards rely on tonal layering and borders for readability."
+			}
+		],
+		"motion": [
+			{
+				"name": "tile-reveal",
+				"value": "560ms with 65ms per-character delay",
+				"purpose": "Reveal feedback in sequence after a valid submission."
+			},
+			{
+				"name": "reduced-motion",
+				"value": "prefers-reduced-motion: reduce",
+				"purpose": "Collapse non-essential animation and scrolling motion."
+			}
+		],
+		"breakpoints": [
+			{ "name": "mobile-tight", "value": "480px" },
+			{ "name": "tablet", "value": "700px" },
+			{ "name": "desktop", "value": "960px" }
+		]
+	},
+	"components": [
+		{
+			"name": "Primary action",
+			"kind": "button",
+			"refersTo": "button-primary",
+			"description": "Coral action with cool-white text, including in dark mode.",
+			"html": "<button class=\"ds-btn-primary\">ENTER GUESS</button>",
+			"css": ".ds-btn-primary { background: var(--primary); color: var(--primary-foreground); border-radius: 0.5rem; font-weight: 700; } .dark .ds-btn-primary { background: var(--primary); color: var(--primary-foreground); }"
+		},
+		{
+			"name": "Equation tile",
+			"kind": "custom",
+			"refersTo": "board-tile-empty",
+			"description": "Square monospace tile that communicates equation feedback through semantic fill states.",
+			"html": "<div class=\"ds-equation-tile\" data-state=\"correct\">7</div>",
+			"css": ".ds-equation-tile { aspect-ratio: 1; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 0.55rem; font-family: var(--font-mono); font-weight: 700; } .ds-equation-tile[data-state=correct] { background: var(--tile-correct); color: var(--tile-correct-foreground); }"
+		},
+		{
+			"name": "Supporting card",
+			"kind": "card",
+			"refersTo": "side-card",
+			"description": "Quiet stats or primer container that supports the board without competing with it.",
+			"html": "<section class=\"ds-card\"><h2>Daily record</h2><p>Your small wins, counted.</p></section>",
+			"css": ".ds-card { background: var(--card); border: 1px solid var(--border); border-radius: 0.625rem; padding: 1.5rem; } .dark .ds-card { box-shadow: none; }"
+		}
+	],
+	"narrative": {
+		"northStar": "The Pocket Calculator Desk",
+		"overview": "Mazzie is a focused equation instrument: a clean sheet, a small set of marks, and just enough colour to show what changed. Rounded display type gives it a friendly voice while monospace equations keep the rules exact. Light mode is crisp cool white; dark mode is readable cool charcoal with no sepia cast or hazy card halos.",
+		"keyCharacteristics": [
+			"Cool, high-contrast surfaces",
+			"Monospace equations and compact labels",
+			"Board-first editorial asymmetry",
+			"Flat fills with restrained depth",
+			"Feedback colour paired with meaning"
+		],
+		"rules": [
+			{
+				"name": "The Cool White Rule",
+				"body": "Light surfaces stay crisp and blue-neutral; dark surfaces stay cool charcoal.",
+				"section": "colors"
+			},
+			{
+				"name": "The Equation Alignment Rule",
+				"body": "Equation characters, values, and share output use the mono stack.",
+				"section": "typography"
+			},
+			{
+				"name": "The Flat-by-Default Rule",
+				"body": "Use surfaces, borders, spacing, and one restrained light-theme shadow; never add gradients or diffuse dark halos.",
+				"section": "elevation"
+			}
+		],
+		"dos": [
+			"Do keep the board as the primary visual anchor.",
+			"Do use cool-white text on the dark-theme coral action.",
+			"Do pair feedback colours with labels or descriptions."
+		],
+		"donts": [
+			"Don't use sepia whites or near-black night mode.",
+			"Don't use gradients, glow, blur, or oversized shadows.",
+			"Don't let shadcn-svelte defaults replace Mazzie's visual language."
+		]
+	}
+}

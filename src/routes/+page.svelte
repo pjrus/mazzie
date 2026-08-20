@@ -283,7 +283,7 @@
 						<Delete data-icon="inline-start" />
 						<span>Backspace</span>
 					</Button>
-					<Button variant="default" size="lg" class="action-key enter-key" onclick={submitGuess}>
+					<Button variant="outline" size="lg" class="action-key enter-key" onclick={submitGuess}>
 						Enter guess
 					</Button>
 				</div>
