@@ -160,11 +160,11 @@
 
 <div class="app-shell">
 	<header class="app-header page-width">
-	<a class="brand-lockup" href={resolve('/')} aria-label="Equation Daily home">
+		<a class="brand-lockup" href={resolve('/')} aria-label="Mazzie home">
 			<span class="brand-mark" aria-hidden="true">=</span>
 			<span>
 				<span class="brand-kicker">Daily challenge</span>
-				<span class="brand-name">Equation Daily</span>
+				<span class="brand-name">Mazzie</span>
 			</span>
 		</a>
 		<nav class="header-actions" aria-label="Game controls">

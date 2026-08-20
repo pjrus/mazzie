@@ -1,6 +1,6 @@
-# Equation Daily
+# Mazzie
 
-Equation Daily is a daily equation-guessing game built with SvelteKit, Svelte 5 runes, TypeScript, Tailwind CSS, and shadcn-svelte. It plays like a compact Nerdle: every guess is a real, balanced equation and each symbol receives Wordle-style feedback.
+Mazzie is a daily equation-guessing game built with SvelteKit, Svelte 5 runes, TypeScript, Tailwind CSS, and shadcn-svelte. It plays like a compact Nerdle: every guess is a real, balanced equation and each symbol receives Wordle-style feedback.
 
 ## Run it locally
 

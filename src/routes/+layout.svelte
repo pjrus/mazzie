@@ -9,10 +9,10 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Equation Daily</title>
+	<title>Mazzie</title>
 	<meta
 		name="description"
-		content="A daily equation guessing game for people who like their puzzles to balance."
+		content="Mazzie is a daily equation guessing game for people who like their puzzles to balance."
 	/>
 </svelte:head>
 <ModeWatcher defaultMode="light" />
