@@ -3,6 +3,13 @@ import { defineConfig } from 'vitest/config';
 import adapter from '@sveltejs/adapter-static';
 import { sveltekit } from '@sveltejs/kit/vite';
 
+const configuredBasePath = process.env.BASE_PATH?.trim() ?? '';
+const basePath: '' | `/${string}` = configuredBasePath
+	? configuredBasePath.startsWith('/')
+		? (configuredBasePath as `/${string}`)
+		: `/${configuredBasePath}`
+	: '';
+
 export default defineConfig({
 	plugins: [
 		tailwindcss(),
@@ -19,7 +26,7 @@ export default defineConfig({
 				fallback: '404.html'
 			}),
 			paths: {
-				base: process.env.BASE_PATH ?? ''
+				base: basePath
 			}
 		})
 	],
