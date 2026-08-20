@@ -515,7 +515,7 @@
 		font-family: var(--font-mono);
 		font-size: 1.5rem;
 		font-weight: 700;
-		box-shadow: 3px 3px 0 var(--foreground);
+		box-shadow: 0 4px 12px color-mix(in oklab, var(--foreground) 18%, transparent);
 	}
 
 	.brand-lockup > span:last-child {
@@ -689,15 +689,17 @@
 
 	.equation-tile[data-state='correct'] {
 		background: var(--tile-correct);
+		color: var(--tile-correct-foreground);
 	}
 
 	.equation-tile[data-state='present'] {
 		background: var(--tile-present);
-		color: var(--foreground);
+		color: var(--tile-present-foreground);
 	}
 
 	.equation-tile[data-state='absent'] {
 		background: var(--tile-absent);
+		color: var(--tile-absent-foreground);
 	}
 
 	.equation-tile.tile-reveal {
@@ -773,7 +775,11 @@
 
 	.side-column :global([data-slot='card']) {
 		border-color: var(--border);
-		box-shadow: 3px 3px 0 color-mix(in oklab, var(--foreground) 12%, transparent);
+		box-shadow: 0 8px 22px color-mix(in oklab, var(--foreground) 10%, transparent);
+	}
+
+	:global(.dark) .side-column :global([data-slot='card']) {
+		box-shadow: none;
 	}
 
 	.card-heading-row {
